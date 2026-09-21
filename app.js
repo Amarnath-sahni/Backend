@@ -42,6 +42,9 @@ app.use(express.json());
 //? Middleware to parse form-data (URL encoded)
 app.use(express.urlencoded({ extended: true }));
 
+app.get("/", (req, res) => {
+  res.send("Backend is running successfully");
+});
 app.use("/api/user",userRoutes)
 app.use("/api", addressRoute);
 
